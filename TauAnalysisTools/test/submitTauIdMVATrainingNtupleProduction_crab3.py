@@ -281,13 +281,13 @@ samples = {
 #    'total_files'                            : -1,
 #    'type'                                   : 'SignalMC'
 #}
-#ggSampleName = "ggHiggs125toTauTau"
-#samples[ggSampleName] = {
-#    'datasetpath'                        : '/GluGluHToTauTau_M125_13TeV_powheg_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
-#    'files_per_job'                      : 1,
-#    'total_files'                        : -1,
-#    'type'                               : 'SignalMC'
-#}
+ggSampleName = "ggHiggs125toTauTau"
+samples[ggSampleName] = {
+    'datasetpath'                        : '/GluGluHToTauTau_M125_14TeV_powheg_pythia8/PhaseIITDRSpring17MiniAOD-PU200_91X_upgrade2023_realistic_v3-v3/MINIAODSIM',
+    'files_per_job'                      : 1,
+    'total_files'                        : -1,
+    'type'                               : 'SignalMC'
+}
 #ggSampleName = "ggHiggs130toTauTau"
 #samples[ggSampleName] = {
 #    'datasetpath'                        : '/GluGluHToTauTau_M130_13TeV_powheg_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/MINIAODSIM',
@@ -295,13 +295,13 @@ samples = {
 #    'total_files'                        : -1,
 #    'type'                               : 'SignalMC'
 #}
-#vbfSampleName = "vbfHiggs125toTauTau"
-#samples[vbfSampleName] = {
-#    'datasetpath'                        : '/VBFHToTauTau_M125_13TeV_powheg_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
-#    'files_per_job'                      : 1,
-#    'total_files'                        : -1,
-#    'type'                               : 'SignalMC'
-#}
+vbfSampleName = "vbfHiggs125toTauTau"
+samples[vbfSampleName] = {
+    'datasetpath'                        : '/VBFHToTauTau_M125_14TeV_powheg_pythia8/PhaseIITDRSpring17MiniAOD-PU200_91X_upgrade2023_realistic_v3-v3/MINIAODSIM',
+    'files_per_job'                      : 1,
+    'total_files'                        : -1,
+    'type'                               : 'SignalMC'
+}
 # currently 23 mass points available
 #mssmHiggsMassPoints1 = [ 140, 180, 200, 250, 300, 350, 400, 450, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1600, 2000, 2300, 2600, 2900 ]
 #for massPoint in mssmHiggsMassPoints1:
@@ -389,7 +389,7 @@ config.Data.inputDBS = 'global'
 config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = $files_per_job
 config.Data.totalUnits = $total_files
-config.Data.outLFNDirBase = '/store/user/anehrkor/TauIDMVATraining2017/PhaseIFall16_81X_upgrade2017_realistic/'
+config.Data.outLFNDirBase = '/store/user/anehrkor/CMSPOS2017/PhaseIITDRSpring17_91X_upgrade2023_realistic/'
 config.Data.publication = False
 
 config.section_("Site")
@@ -416,7 +416,7 @@ config.Data.unitsPerJob = $lumis_per_job
 config.Data.totalUnits = $total_lumis
 config.Data.lumiMask = 'https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions12/8TeV/Prompt/Cert_190456-208686_8TeV_PromptReco_Collisions12_JSON.txt'
 #config.Data.runRange = '193093-193999' # '193093-194075'
-config.Data.outLFNDirBase = '/store/user/anehrkor/TauIDMVATraining2017/PhaseIFall16_81X_upgrade2017_realistic/'
+config.Data.outLFNDirBase = '/store/user/anehrkor/CMSPOS2017/PhaseIITDRSpring17_91X_upgrade2023_realistic/'
 config.Data.publication = False                                                                                                                                                  
 
 config.section_("Site")

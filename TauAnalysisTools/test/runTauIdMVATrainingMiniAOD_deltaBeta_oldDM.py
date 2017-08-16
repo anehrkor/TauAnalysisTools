@@ -11,9 +11,9 @@ train_option = 'optaDBAll'
 # apples-to-apples comparison!
 computeROConAllEvents = False
 
-inputFilePath  = "/nfs/dust/cms/user/anehrkor/TauIDMVATraining2017/PhaseIFall16_81X_upgrade2017_realistic_v1/ntuples/"
+inputFilePath  = "/nfs/dust/cms/user/anehrkor/CMSPOS2017/PhaseIITDRSpring17_91X_upgrade2023_realistic/ntuples/"
 
-outputFilePath = "/nfs/dust/cms/user/anehrkor/TauIDMVATraining2017/PhaseIFall16_81X_upgrade2017_realistic_v1/%s/trainfilesfinal_v1/" % version
+outputFilePath = "/nfs/dust/cms/user/anehrkor/CMSPOS2017/PhaseIITDRSpring17_91X_upgrade2023_realistic/%s/trainfilesfinal_v1/" % version
 
 preselection_oldDMs = \
     'decayModeFindingOldDMs > 0.5' \
@@ -33,7 +33,7 @@ mvaDiscriminators = {
         'applyEventPruningSignal'   : 0, # no random pruning
         'applyEventPruningBackground' : 0, # no random pruning
         'applyPtDependentPruningSignal' : False, # no pt-dependent pruning
-        'applyPtDependentPruningBackground' : True, # pt-dependent pruning
+        'applyPtDependentPruningBackground' : False, # pt-dependent pruning
         'mvaTrainingOptions'  : "!H:!V:NTrees=1000:BoostType=Grad:Shrinkage=0.20:UseBaggedBoost:GradBaggingFraction=0.5:SeparationType=GiniIndex:nCuts=500:PruneMethod=NoPruning:MaxDepth=5",
         'inputVariables'      : [
             'TMath::Log(TMath::Max(1., recTauPt))/F',
@@ -163,22 +163,22 @@ signalSamples = [
 #for massPoint in smHiggsMassPoints5:
 #    tthSampleName = "tthHiggs%1.0ftoTauTau" % massPoint
 #    signalSamples.append(tthSampleName)
-#ggSampleName = "ggHiggs125toTauTau"
-#signalSamples.append(ggSampleName)
-#vbfSampleName = "vbfHiggs125toTauTau"
-#signalSamples.append(vbfSampleName)
-mssmHiggsMassPoints1 = [ 140, 160, 180, 200, 250, 300, 350, 400, 450, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1600, 1800, 2000, 2300, 2600, 2900 ]
-for massPoint in mssmHiggsMassPoints1:
-    ggSampleName = "ggA%1.0ftoTauTau" % massPoint
-    signalSamples.append(ggSampleName)
-mssmHiggsMassPoints2 = [ 140, 160, 180, 200, 250, 300, 350, 400, 450, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1600, 1800, 2000, 2300, 2600, 3200 ]
-for massPoint in mssmHiggsMassPoints2:
-    bbSampleName = "bbA%1.0ftoTauTau" % massPoint
-    signalSamples.append(bbSampleName)
-ZprimeMassPoints = [ 750, 1000, 1250, 1750, 2000, 2500, 3000, 3500, 4000 ]
-for massPoint in ZprimeMassPoints:
-    sampleName = "Zprime%1.0ftoTauTau" % massPoint
-    signalSamples.append(sampleName)
+ggSampleName = "ggHiggs125toTauTau"
+signalSamples.append(ggSampleName)
+vbfSampleName = "vbfHiggs125toTauTau"
+signalSamples.append(vbfSampleName)
+#mssmHiggsMassPoints1 = [ 140, 160, 180, 200, 250, 300, 350, 400, 450, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1600, 1800, 2000, 2300, 2600, 2900 ]
+#for massPoint in mssmHiggsMassPoints1:
+#    ggSampleName = "ggA%1.0ftoTauTau" % massPoint
+#    signalSamples.append(ggSampleName)
+#mssmHiggsMassPoints2 = [ 140, 160, 180, 200, 250, 300, 350, 400, 450, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1600, 1800, 2000, 2300, 2600, 3200 ]
+#for massPoint in mssmHiggsMassPoints2:
+#    bbSampleName = "bbA%1.0ftoTauTau" % massPoint
+#    signalSamples.append(bbSampleName)
+#ZprimeMassPoints = [ 750, 1000, 1250, 1750, 2000, 2500, 3000, 3500, 4000 ]
+#for massPoint in ZprimeMassPoints:
+#    sampleName = "Zprime%1.0ftoTauTau" % massPoint
+#    signalSamples.append(sampleName)
 #WprimeMassPoints = [ 400, 600, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200, 3400, 3600, 3800, 4000, 4200, 4400, 4600, 4800, 5000, 5200, 5400, 5600, 5800 ]
 #for massPoint in WprimeMassPoints:
 #    sampleName = "Wprime%1.0ftoTauNu" % massPoint
@@ -186,7 +186,7 @@ for massPoint in ZprimeMassPoints:
 
 backgroundSamples = [
     "TT_powheg",
-#    "PPmuXptGt20Mu15",
+    "PPmuXptGt20Mu15",
 #    "QCDmuEnrichedPt30to50",
 #    "QCDmuEnrichedPt50to80",
 #    "QCDmuEnrichedPt80to120",
@@ -197,22 +197,22 @@ backgroundSamples = [
 #    "QCDmuEnrichedPt600to800",
 #    "QCDmuEnrichedPt800to1000",
 #    "QCDmuEnrichedPtGt1000",
-    "WplusJets_madgraph",
-#    "QCDjetsFlatPt15to7000",
-    "QCDjetsPt30to50",
-    "QCDjetsPt50to80",
-    "QCDjetsPt80to120",
-    "QCDjetsPt120to170",
-    "QCDjetsPt170to300",
-    "QCDjetsPt300to470",
-    "QCDjetsPt470to600",
-    "QCDjetsPt600to800",
-    "QCDjetsPt800to1000",
-    "QCDjetsPt1000to1400",
-    "QCDjetsPt1400to1800",
+#    "WplusJets_madgraph",
+    "QCDjetsFlatPt15to7000",
+#    "QCDjetsPt30to50",
+#    "QCDjetsPt50to80",
+#    "QCDjetsPt80to120",
+#    "QCDjetsPt120to170",
+#    "QCDjetsPt170to300",
+#    "QCDjetsPt300to470",
+#    "QCDjetsPt470to600",
+#    "QCDjetsPt600to800",
+#    "QCDjetsPt800to1000",
+#    "QCDjetsPt1000to1400",
+#    "QCDjetsPt1400to1800",
 #    "QCDjetsPt1800to2400",
-    "QCDjetsPt2400to3200",
-    "QCDjetsPtGt3200",
+#    "QCDjetsPt2400to3200",
+#    "QCDjetsPtGt3200",
 #    "QCDEmEnrichedPt20to30",
 #    "QCDEmEnrichedPt30to50",
 #    "QCDEmEnrichedPt50to80",
