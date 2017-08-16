@@ -14,7 +14,8 @@ process.load('Configuration.StandardSequences.GeometryRecoDB_cff')
 process.load('Configuration.StandardSequences.MagneticField_cff')
 process.load('Configuration/StandardSequences/FrontierConditions_GlobalTag_cff')
 from Configuration.AlCa.GlobalTag import GlobalTag
-process.GlobalTag = GlobalTag(process.GlobalTag, '81X_upgrade2017_realistic_v26', '')
+#process.GlobalTag = GlobalTag(process.GlobalTag, '92X_upgrade2023_realistic_v2', '')
+process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:run2_mc', '')
 
 #process.add_(cms.Service("PrintLoadingPlugins"))
 
@@ -27,7 +28,8 @@ process.source = cms.Source("PoolSource",
         #'root://xrootd.ba.infn.it//store/cmst3/user/ytakahas/CMG/QCD_Pt-15to3000_Tune4C_Flat_13TeV_pythia8/Phys14DR-PU20bx25_trkalmb_PHYS14_25_V1-v1/AODSIM/Dynamic95_20150520/aod_1.root'
         #'file:/disk1/MVAonMiniAOD/RelValZTT_8_0_20_PU25ns_MINIAODSIM_1.root',
         #'file:/disk1/MVAonMiniAOD/RelValZTT_8_0_20_PU25ns_MINIAODSIM_2.root'
-        'root://cms-xrd-global.cern.ch//store/mc/PhaseIFall16MiniAOD/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PhaseIFall16PUFlat20to50_PhaseIFall16_81X_upgrade2017_realistic_v26_ext1-v1/70000/02A37775-A0E9-E611-8E01-0025907B4F2E.root'
+        'root://cms-xrd-global.cern.ch//store/mc/PhaseIITDRSpring17MiniAOD/DYJetsToLL_M-50_TuneCUETP8M1_14TeV-madgraphMLM-pythia8/MINIAODSIM/PU200_91X_upgrade2023_realistic_v3-v2/110000/020B344C-C77B-E711-BF90-008CFA165FE4.root'
+        #'root://cms-xrd-global.cern.ch//store/mc/RunIISummer17MiniAOD/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/92X_upgrade2017_realistic_v7-v1/110000/C2F38B75-8F75-E711-A44F-0025905B85B8.root'
     ),
     ##eventsToProcess = cms.untracked.VEventRange(
     ##    '1:917:1719279',
