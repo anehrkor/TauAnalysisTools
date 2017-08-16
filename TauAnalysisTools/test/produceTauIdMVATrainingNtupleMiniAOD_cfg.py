@@ -14,8 +14,8 @@ process.load('Configuration.StandardSequences.GeometryRecoDB_cff')
 process.load('Configuration.StandardSequences.MagneticField_cff')
 process.load('Configuration/StandardSequences/FrontierConditions_GlobalTag_cff')
 from Configuration.AlCa.GlobalTag import GlobalTag
-#process.GlobalTag = GlobalTag(process.GlobalTag, '92X_upgrade2023_realistic_v2', '')
-process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:run2_mc', '')
+process.GlobalTag = GlobalTag(process.GlobalTag, '91X_upgrade2023_realistic_v3', '') # works only with CMSSW_9_1_X
+#process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:run2_mc', '')
 
 #process.add_(cms.Service("PrintLoadingPlugins"))
 
