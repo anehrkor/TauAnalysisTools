@@ -52,8 +52,7 @@ mvaDiscriminators = {
 			'numOfflinePrimaryVertices/I',
 			'genVisTauPt/F',
 			'genTauPt/F',
-			'byIsolationMVArun2v1DBoldDMwLTraw',
-			'byIsolationMVArun2v1DBoldDMwLTraw2016'
+			'byIsolationMVArun2v1DBoldDMwLTraw'
 		]
 	}
 }
@@ -95,7 +94,7 @@ for discriminator in mvaDiscriminators.keys():
 	print "processing discriminator = %s" % discriminator
 	#----------------------------------------------------------------------------    
 	# build config file for actual MVA training
-	outputFileName = os.path.join(outputFilePath, "trainTauIdMVA_%s.root" % discriminator)
+	outputFileName = os.path.join(outputFilePath, "trainTauIdMVA_CMSPOS2017_%s.root" % discriminator)
 	print " outputFileName = '%s'" % outputFileName
 
 	cfgFileName_original = configFile_trainTauIdMVA
