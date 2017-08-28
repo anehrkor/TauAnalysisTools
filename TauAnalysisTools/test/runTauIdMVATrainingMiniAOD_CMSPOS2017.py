@@ -48,11 +48,16 @@ mvaDiscriminators = {
 			'TMath::Max(-1.,recTauGJangleDiff)/F'
 		],
 		'spectatorVariables'  : [
+			'recTauPt/F',
+			'recTauEta/F',
 			'leadPFChargedHadrCandPt/F',
 			'numOfflinePrimaryVertices/I',
 			'genVisTauPt/F',
 			'genTauPt/F',
-			'byIsolationMVArun2v1DBoldDMwLTraw'
+			'byIsolationMVArun2v1DBoldDMwLTraw/F',
+			'chargedIsoPtSum/F',
+			'neutralIsoPtSum/F',
+			'byCombinedIsolationDeltaBetaCorrRaw3Hits/F'
 		]
 	}
 }
@@ -148,7 +153,7 @@ for discriminator in mvaDiscriminators.keys():
 	logFileName = cfgFileName.replace("_cfg.py", ".log")
 
 	print "\nTo run the training with name %s, execute the following command:\n" % discriminator
-	trainingCommand = "nice " + executable_trainTauIdMVA + " " + cfgFileName + " &> " + logFileName + "\n"
+	trainingCommand = "cd " + outputFilePath + "; nice " + executable_trainTauIdMVA + " " + cfgFileName + " &> " + logFileName + "\n"
 	trainingCommandsFile.write(trainingCommand+"\n")
 	print "\t" + trainingCommand
 
